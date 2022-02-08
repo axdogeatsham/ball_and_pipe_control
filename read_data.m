@@ -12,14 +12,19 @@ function [distance,pwm,target,deadpan] = read_data(device)
 %  system
 %
 % Created by:  Kyle Naddeo 1/3/2022
-% Modified by: YOUR NAME and DATE
+% Modified by: Sanjay Thallam and 2/8/2022
 
 %% Ask nicely for data
 % use the serialport() command options to write the correct letter to the
 % system (Hint: the letters are in the spec sheet)
 
+writeline(device, "S");
+device.NumBytesAvailable
 %% Read data
 % use the serialport() command options to read the response
+
+data = read(device, 20, "string");
+
 
 %% Translate
 % translate the response to 4 doubles using str2double() and
@@ -29,4 +34,8 @@ function [distance,pwm,target,deadpan] = read_data(device)
 % target     = 
 % deadpan    = 
 
+distance = str2double(extractBetween(data,2,5))
+pwm = str2double(extractBetween(data,7,10))
+target = str2double(extractBetween(data,12,15))
+deadpan = str2double(extractBetween(data,17,20))
 end
