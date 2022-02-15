@@ -17,13 +17,16 @@ function [distance,pwm,target,deadpan] = read_data(device)
 %% Ask nicely for data
 % use the serialport() command options to write the correct letter to the
 % system (Hint: the letters are in the spec sheet)
-
-writeline(device, "S");
+write(device,"F","string")
+write(device,"P2500","string")
+write(device,"S","string")
 device.NumBytesAvailable
+
 %% Read data
 % use the serialport() command options to read the response
 
-data = read(device, 20, "string");
+data = read(device, 20, "string")
+
 
 
 %% Translate
