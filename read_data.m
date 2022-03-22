@@ -18,7 +18,7 @@ function [distance,pwm,target,deadpan] = read_data(device)
 % use the serialport() command options to write the correct letter to the
 % system (Hint: the letters are in the spec sheet)
 write(device,"F","string")
-write(device,"P2500","string")
+%write(device,"P0000","string")
 write(device,"S","string")
 device.NumBytesAvailable
 
