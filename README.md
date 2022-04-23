@@ -4,7 +4,7 @@ MATLAB codes to open serial communication with a ball and pipe system. The syste
 
 ## Overview of Project
 
-The goal for this project was to control a ball and pipe system using MATLAB and a control system of our choice. This project's goal was to control the height of a ball within a pipe using a fan which is controlled using PWM values. For our control system, we decided to use the Linear Quadratic Regulator (LQR) which is a control method that focuses on minimizing the cost and time to reach a desired state. 
+The goal for this project was to control a ball and pipe system using MATLAB and a control system of our choice. The ball and pipe system consists of a ping pong ball whihc is the object being moved, a PWM fan at the bottom of the pipe which is used to control the altitude of the ball, and an IR distance sensor used to track the height of the ball. For our control system, we decided to use the Linear Quadratic Regulator (LQR) which is a control method that focuses on minimizing the cost and time to reach a desired state. To interface with the ball and pipe system, a series of commands were transmitted by the MATLAB code as defined by the SCFBA SPecification Sheet document.
 
 ## Theory of Control Method (Linear Quadratic Regulator)
 
@@ -18,7 +18,8 @@ In order to run the code, one will have to do a few things.
 1)Set the COM ports
 2)Actually run the code
 
-###Set the COM ports
+### Set the COM ports
+
 First, plug the ECLC USB cable into your computer. After this, open up device manager (if on Windows) and find the COM port associated with the Ball & Pipe system. To find the connected COM port in device manager, press the "Ports" arrow from the list which will show the different connections then in parenthesis, it will say what COM it is associated with. The next step is to set the Baud rate. To do this, right click on this port, then click properties, then port settings and set the baud rate to 19200. After this, one needs to set the com port in the real_world code. On line 13 of the "real_world.m" file, change COM6 to the com port associated with the ball & pipe system for your computer. 
 
 
