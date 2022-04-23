@@ -12,33 +12,27 @@ function [distance,pwm,target,deadpan] = read_data(device)
 %  system
 %
 % Created by:  Kyle Naddeo 1/3/2022
-% Modified by: Sanjay Thallam and 2/8/2022
+% Modified by: Sanjay Thallam, Mike Mulvihill and Conor Peterson and 2/8/2022
 
 %% Ask nicely for data
 % use the serialport() command options to write the correct letter to the
 % system (Hint: the letters are in the spec sheet)
-write(device,"F","string")
+write(device,"F","string"); %disable the fan speed control from the potentiomenter
 %write(device,"P0000","string")
-write(device,"S","string")
-device.NumBytesAvailable
+write(device,"S","string"); %read the current data from the ball pipe system
+device.NumBytesAvailable; %check if there is valid data
 
 %% Read data
 % use the serialport() command options to read the response
 
-data = read(device, 20, "string")
-
-
+data = read(device, 20, "string"); %read the 20 chars from the system (from the datasheet)
 
 %% Translate
 % translate the response to 4 doubles using str2double() and
 % extractBetween() (Hint: the response is in the spec sheet)
-% distance   = 
-% manual_pwm = 
-% target     = 
-% deadpan    = 
 
-distance = str2double(extractBetween(data,2,5))
-pwm = str2double(extractBetween(data,7,10))
-target = str2double(extractBetween(data,12,15))
-deadpan = str2double(extractBetween(data,17,20))
+distance = str2double(extractBetween(data,2,5)); %extract the distance measurement
+pwm = str2double(extractBetween(data,7,10)); %extract the pwm measurement
+target = str2double(extractBetween(data,12,15)); %extract the target measurement
+deadpan = str2double(extractBetween(data,17,20)); %extract the deadpan measurement
 end
