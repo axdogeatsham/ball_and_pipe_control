@@ -16,8 +16,8 @@ The Linear Quadratic Regulator (LQR) is an optimal control method based on state
 
 In order to run the code, one will have to do a few things.
   
-  1)Set the COM ports
-  2)Actually Running the Code
+ 1)Set the COM ports
+ 2)Actually Running the Code
 
 ### Set the COM Ports
 
