@@ -27,4 +27,4 @@ First, plug the ECLC USB cable into your computer and make sure it recognizes th
 
 ### Actually Running the Code
 
-To actually run the code, one has to type "real_world" into the MATLAB console located on the bottom of the program and press enter to start. Additionally, to stop the code and run again, one has to type "clear device" into the MATLAB console before running "real_world" once again using the previous step. Once the code is running properly with the right connections established, you should be able to see it in action controlling the ball in the pipe.
+To actually run the code, one has to type "real_world" into the MATLAB console located on the bottom of the program and press enter to start. Additionally, to stop the code and run again, one has to type "clear device" into the MATLAB console before running "real_world" once again using the previous step. Once the code is running properly with the right connections established, you should be able to see it in action controlling the ball in the pipe. This is what we are trying to achieve.
